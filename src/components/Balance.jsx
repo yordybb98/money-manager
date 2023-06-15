@@ -6,7 +6,7 @@ function Balance() {
 
     return (
         <div>
-            Balance: {JSON.stringify(data)}
+            <h1>Balance</h1>
         </div>
     )
 }

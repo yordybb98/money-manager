@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useGlobalState } from "../context/GlobalState"
+import { useGlobalState } from "../../context/GlobalState"
 
 function TransactionsForm() {
     const { addTransaction } = useGlobalState()
@@ -11,7 +11,7 @@ function TransactionsForm() {
         addTransaction({
             description,
             amount,
-            id: 1
+            id: window.crypto.randomUUID()
         })
     }
 
