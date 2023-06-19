@@ -1,12 +1,12 @@
 import { VictoryPie, VictoryLabel } from 'victory'
 import { useGlobalState } from '../context/GlobalState'
+import { useEffect } from 'react'
 
 function ExpenseChart() {
 
     const { transactions } = useGlobalState()
     const totalIncome = transactions.filter(transaction => transaction.amount > 0).reduce((acc, transaction) => (acc += transaction.amount), 0)
     const totalExpenses = transactions.filter(transaction => transaction.amount < 0).reduce((acc, transaction) => (acc += transaction.amount), 0) * -1
-
     const TotalExpensesPercentage = Math.round((totalExpenses / totalIncome) * 100)
     const TotalIncomePercentage = 100 - TotalExpensesPercentage
 
